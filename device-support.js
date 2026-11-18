@@ -1,0 +1,3 @@
+'use strict';
+window.mobileUnsupported=Boolean(navigator.userAgentData?.mobile||/Android|iPhone|iPad|iPod|Mobile|Silk|Kindle/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1));
+if(window.mobileUnsupported){document.documentElement.classList.add('mobile-unsupported');document.querySelector('.shell').inert=true;const notice=document.createElement('main');notice.id='desktop-required';notice.innerHTML='<div class="desktop-notice"><p>MONSTER HEROES</p><h1>This game doesn’t support mobile.</h1><p>Please open it on a desktop or laptop.</p></div>';document.body.append(notice);window.GameLoading?.ready();}
